@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: servicemarket-db
+    environment:
+      POSTGRES_DB: servicemarket
+      POSTGRES_USER: user_sm
+      POSTGRES_PASSWORD: password_sm
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
